@@ -1,4 +1,5 @@
 import React from 'react';
+import {remFeature} from '../actions/carActions'
 
 const AddedFeature = props => {
   return (
