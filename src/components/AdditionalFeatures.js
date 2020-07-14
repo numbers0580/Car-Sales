@@ -1,5 +1,6 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
+import {connect} from 'react-redux';
 
 const AdditionalFeatures = props => {
   return (
@@ -18,4 +19,10 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+// Relied on stackoverflow for assistance understanding connect for redux
+// https://stackoverflow.com/questions/41021369/how-to-use-connect-from-react-redux
+function mapAddlToProps(state) {
+  return {additionalFeatures: state.additionalFeatures};
+};
+
+export default connect(mapAddlToProps)(AdditionalFeatures);

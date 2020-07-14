@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 const Total = props => {
   return (
@@ -8,4 +9,10 @@ const Total = props => {
   );
 };
 
-export default Total;
+// Relied on stackoverflow for assistance understanding connect for redux
+// https://stackoverflow.com/questions/41021369/how-to-use-connect-from-react-redux
+function mapTotalToProps(state) {
+  return {car: state.car, additionalPrice: state.additionalPrice};
+};
+
+export default connect(mapTotalToProps)(Total);
